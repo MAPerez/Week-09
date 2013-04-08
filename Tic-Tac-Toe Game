@@ -1,0 +1,541 @@
+import javax.swing.JOptionPane;
+
+public class TicTacToeGame1
+
+{
+ 
+  public static void main (String args[])
+ 
+	{
+		boolean GameDone = true;
+		String user2Move;
+		String userMove;
+		int numberOfMovesImplemented = 0;
+		
+		String sBoard = "";
+		String cell1 = "1";
+		String cell2 = "2";
+		String cell3 = "3";
+		String cell4 = "4";
+		String cell5 = "5";
+		String cell6 = "6";
+		String cell7 = "7";
+		String cell8 = "8";
+		String cell9 = "9";
+		
+		do
+		{
+			boolean bInvalidMove = true;
+
+			do
+			{
+				
+				userMove = JOptionPane.showInputDialog("Make your move: ");
+				
+				if ( userMove.equalsIgnoreCase("1") )
+				{
+					if (cell1.equalsIgnoreCase("1") )
+					{
+						cell1 = "X";
+						bInvalidMove = false;
+					}
+					
+					else
+					{
+						JOptionPane.showMessageDialog(null, "Sorry, bad move." );
+					}
+					
+				}
+			
+				else if (userMove.equalsIgnoreCase("2"))
+				{
+					
+					if ( cell2.equalsIgnoreCase("2") )
+					{
+						cell2 = "X";
+						bInvalidMove = false;
+					}
+					
+					else
+					{
+						JOptionPane.showMessageDialog(null, "Sorry, bad move." );
+					}
+				}
+			
+				else if (userMove.equalsIgnoreCase("3"))
+				{
+
+					if ( cell3.equalsIgnoreCase("3") )
+					{
+						cell3 = "X";
+						bInvalidMove = false;
+					}
+					
+					else
+					{
+						
+						JOptionPane.showMessageDialog(null, "Sorry, bad move." );
+					}
+				}
+			
+				else if (userMove.equalsIgnoreCase("4"))
+				{
+					if (cell4.equalsIgnoreCase("4") )
+					{
+						cell4 = "X";
+						bInvalidMove = false;
+					}
+					
+					else
+					{
+						JOptionPane.showMessageDialog(null, "Sorry, bad move." );
+					}
+				}
+			
+				else if (userMove.equalsIgnoreCase("5"))
+				{
+					if (cell5.equalsIgnoreCase("5") )
+					{
+						cell5 = "X";
+						bInvalidMove = false;
+					}
+					
+					else
+					{
+						JOptionPane.showMessageDialog(null, "Sorry, bad move." );
+					}
+				}
+			
+				else if (userMove.equalsIgnoreCase("6"))
+				{
+					if (cell6.equalsIgnoreCase("6") )
+					{
+						cell6 = "X";
+						bInvalidMove = false;
+					}
+					
+					else
+					{
+						JOptionPane.showMessageDialog(null, "Sorry, bad move." );
+					}
+				}
+			
+				else if (userMove.equalsIgnoreCase("7"))
+				{
+					if (cell7.equalsIgnoreCase("7") )
+					{
+						cell7 = "X";
+						bInvalidMove = false;
+					}
+					
+					else
+					{
+						JOptionPane.showMessageDialog(null, "Sorry, bad move." );
+					}
+				}
+			
+				else if (userMove.equalsIgnoreCase("8"))
+				{
+					if (cell8.equalsIgnoreCase("8") )
+					{
+						cell8 = "X";
+						bInvalidMove = false;
+					}
+					
+					else
+					{
+						JOptionPane.showMessageDialog(null, "Sorry, bad move." );
+					}
+				}
+			
+				else
+				{
+					if (cell9.equalsIgnoreCase("9") )
+					{
+						cell9 = "X";
+						bInvalidMove = false;
+					}
+					
+					else
+					{
+						 JOptionPane.showMessageDialog(null, "Sorry, bad move." );
+					}
+				}	
+			} while(bInvalidMove);
+			
+			++numberOfMovesImplemented;
+			
+			sBoard = cell1 + "|" + cell2 + "|" + cell3 + "\n";
+			sBoard = sBoard + "--|---|---\n";
+		
+			sBoard = sBoard + cell4 + "|" + cell5 + "|" + cell6 + "\n";
+			sBoard = sBoard + "--|---|---\n";
+		
+			sBoard = sBoard + cell7 + "|" + cell8 + "|" + cell9 + "\n";
+			
+			JOptionPane.showMessageDialog(null, sBoard );
+			
+			
+			if (cell1.equalsIgnoreCase("O") && cell2.equalsIgnoreCase("O") && cell3.equalsIgnoreCase("O") )
+			{
+				JOptionPane.showMessageDialog(null, "User2 Won!" );
+			    break;				 
+		    }
+			 
+			else if (( cell4.equalsIgnoreCase("O") && cell5.equalsIgnoreCase("O") && cell6.equalsIgnoreCase("O")))
+			{
+
+				JOptionPane.showMessageDialog(null, "User2 Won!" );
+				break;	
+				 
+			}
+			 
+			else if ( cell7.equalsIgnoreCase("O") && cell8.equalsIgnoreCase("O") && cell9.equalsIgnoreCase("O"))
+			{
+
+				JOptionPane.showMessageDialog(null, "User2 Won!" );
+				break;	
+			}
+			 
+			else if ( cell1.equalsIgnoreCase("O") &&  cell4.equalsIgnoreCase("O") && cell7.equalsIgnoreCase("O") )
+			{
+
+				JOptionPane.showMessageDialog(null, "User2 Won!" );
+				break;	
+			}
+			else if ( cell2.equalsIgnoreCase("O") && cell5.equalsIgnoreCase("O")  && cell8.equalsIgnoreCase("O") )
+			{
+
+				JOptionPane.showMessageDialog(null, "User2 Won!" );
+			    break;	
+			}
+			else if ( cell3.equalsIgnoreCase("O") &&  cell6.equalsIgnoreCase("O") && cell9.equalsIgnoreCase("O") )
+			{
+
+				JOptionPane.showMessageDialog(null, "User2 Won!" );
+				break;	
+			}
+			 
+			else if ( cell1.equalsIgnoreCase("O") && cell5.equalsIgnoreCase("O") && cell9.equalsIgnoreCase("O") ) 
+			{
+
+				JOptionPane.showMessageDialog(null, "User2 Won!" );
+				break;	
+			}
+			
+			else if ( cell3.equalsIgnoreCase("O") && cell5.equalsIgnoreCase("O") && cell7.equalsIgnoreCase("O") )
+			{
+				JOptionPane.showMessageDialog(null, "User2 Won!" );
+				break;		
+			}
+			 
+			else if ( cell1.equalsIgnoreCase("X") && cell2.equalsIgnoreCase("X") && cell3.equalsIgnoreCase("X"))
+			{
+				JOptionPane.showMessageDialog(null, "You Won!" );
+				break;		
+			}
+			 
+			else if ( cell4.equalsIgnoreCase("X") && cell5.equalsIgnoreCase("X") && cell6.equalsIgnoreCase("X"))
+			{
+				JOptionPane.showMessageDialog(null, "You Won!" );
+				break;		
+			}
+			 
+			else if ( cell7.equalsIgnoreCase("X") && cell8.equalsIgnoreCase("X") && cell9.equalsIgnoreCase("X"))
+			{
+				JOptionPane.showMessageDialog(null, "You Won!" );
+				break;		
+			}
+			 
+			else if ( cell1.equalsIgnoreCase("X") &&  cell4.equalsIgnoreCase("X") && cell7.equalsIgnoreCase("X"))
+			{
+				JOptionPane.showMessageDialog(null, "You Won!" );
+				break;		
+			}
+			 
+			else if ( cell2.equalsIgnoreCase("X") && cell5.equalsIgnoreCase("X")  && cell8.equalsIgnoreCase("X") )
+			{
+				JOptionPane.showMessageDialog(null, "You Won!" );
+				break;		
+			}
+			 
+			else if ( cell3.equalsIgnoreCase("X") &&  cell6.equalsIgnoreCase("X") && cell9.equalsIgnoreCase("X") )
+			{
+				JOptionPane.showMessageDialog(null, "You Won!" );
+				break;		
+			}
+			 
+			else if ( cell1.equalsIgnoreCase("X") && cell5.equalsIgnoreCase("X") && cell9.equalsIgnoreCase("X") )
+			{
+				JOptionPane.showMessageDialog(null, "You Won!" );
+				break;		
+			}
+			else if ( cell3.equalsIgnoreCase("X") && cell5.equalsIgnoreCase("X") && cell7.equalsIgnoreCase("X") )
+			{
+				JOptionPane.showMessageDialog(null, "You Won!" );
+				break;		
+			}
+			 
+			if (numberOfMovesImplemented == 9)
+			{ 
+				 JOptionPane.showMessageDialog(null, "Game Tied" );
+				 break;		
+			}
+			 
+			do
+			{
+
+				user2Move = JOptionPane.showInputDialog("User2 make your move: ");
+			
+				if ( user2Move.equalsIgnoreCase("1") )
+				{
+					if (cell1.equalsIgnoreCase("1") )
+					{
+						cell1 = "O";
+						bInvalidMove = false;
+					}
+					
+					else
+					{
+						JOptionPane.showMessageDialog(null, "Sorry, bad move." );
+					}
+					
+				}
+			
+				else if (user2Move.equalsIgnoreCase("2"))
+				{
+					
+					if ( cell2.equalsIgnoreCase("2") )
+					{
+						cell2 = "O";
+						bInvalidMove = false;
+					}
+					
+					else
+					{
+						JOptionPane.showMessageDialog(null, "Sorry, bad move." );
+					}
+				}
+			
+				else if (user2Move.equalsIgnoreCase("3"))
+				{
+
+					if ( cell3.equalsIgnoreCase("3") )
+					{
+						cell3 = "O";
+						bInvalidMove = false;
+					}
+					
+					else
+					{
+						
+						JOptionPane.showMessageDialog(null, "Sorry, bad move." );
+					}
+				}
+			
+				else if (user2Move.equalsIgnoreCase("4"))
+				{
+					if (cell4.equalsIgnoreCase("4") )
+					{
+						cell4 = "O";
+						bInvalidMove = false;
+					}
+					
+					else
+					{
+						JOptionPane.showMessageDialog(null, "Sorry, bad move." );
+					}
+				}
+			
+				else if (user2Move.equalsIgnoreCase("5"))
+				{
+					if (cell5.equalsIgnoreCase("5") )
+					{
+						cell5 = "O";
+						bInvalidMove = false;
+					}
+					
+					else
+					{
+						JOptionPane.showMessageDialog(null, "Sorry, bad move." );
+					}
+				}
+			
+				else if (user2Move.equalsIgnoreCase("6"))
+				{
+					if (cell6.equalsIgnoreCase("6") )
+					{
+						cell6 = "O";
+						bInvalidMove = false;
+					}
+					
+					else
+					{
+						JOptionPane.showMessageDialog(null, "Sorry, bad move." );
+					}
+				}
+			
+				else if (user2Move.equalsIgnoreCase("7"))
+				{
+					if (cell7.equalsIgnoreCase("7") )
+					{
+						cell7 = "O";
+						bInvalidMove = false;
+					}
+					
+					else
+					{
+						JOptionPane.showMessageDialog(null, "Sorry, bad move." );
+					}
+				}
+			
+				else if (user2Move.equalsIgnoreCase("8"))
+				{
+					if (cell8.equalsIgnoreCase("8") )
+					{
+						cell8 = "O";
+						bInvalidMove = false;
+					}
+					
+					else
+					{
+						JOptionPane.showMessageDialog(null, "Sorry, bad move." );
+					}
+				}
+			
+				else
+				{
+					if (cell9.equalsIgnoreCase("9") )
+					{
+						cell9 = "O";
+						bInvalidMove = false;
+					}
+					
+					else
+					{
+						JOptionPane.showMessageDialog(null, "Sorry, bad move." );
+					}
+				}	
+					
+			} while(bInvalidMove);
+			
+			++numberOfMovesImplemented;
+			
+			sBoard = cell1 + "|" + cell2 + "|" + cell3 + "\n";
+			sBoard = sBoard + "--|---|---\n";
+		
+			sBoard = sBoard + cell4 + "|" + cell5 + "|" + cell6 + "\n";
+			sBoard = sBoard + "--|---|---\n";
+		
+			sBoard = sBoard + cell7 + "|" + cell8 + "|" + cell9 + "\n";
+			
+			JOptionPane.showMessageDialog(null, sBoard );
+		
+
+			 if (cell1.equalsIgnoreCase("O") && cell2.equalsIgnoreCase("O") && cell3.equalsIgnoreCase("O") )
+			 {
+				 JOptionPane.showMessageDialog(null, "User2 Won!" );
+				 break;				 
+			 }
+			 
+			 else if (( cell4.equalsIgnoreCase("O") && cell5.equalsIgnoreCase("O") && cell6.equalsIgnoreCase("O")))
+			 {
+
+				 JOptionPane.showMessageDialog(null, "User2 Won!" );
+				 break;	
+				 
+			 }
+			 
+			 else if ( cell7.equalsIgnoreCase("O") && cell8.equalsIgnoreCase("O") && cell9.equalsIgnoreCase("O"))
+			 {
+
+				 JOptionPane.showMessageDialog(null, "User2 Won!" );
+				 break;	
+			 }
+			 
+			 else if ( cell1.equalsIgnoreCase("O") &&  cell4.equalsIgnoreCase("O") && cell7.equalsIgnoreCase("O") )
+			 {
+
+				 JOptionPane.showMessageDialog(null, "User2 Won!" );
+				 break;	
+			 }
+			 else if ( cell2.equalsIgnoreCase("O") && cell5.equalsIgnoreCase("O")  && cell8.equalsIgnoreCase("O") )
+			 {
+
+				 JOptionPane.showMessageDialog(null, "User2 Won!" );
+				 break;	
+			 }
+			 else if ( cell3.equalsIgnoreCase("O") &&  cell6.equalsIgnoreCase("O") && cell9.equalsIgnoreCase("O") )
+			 {
+
+				 JOptionPane.showMessageDialog(null, "User2 Won!" );
+				 break;	
+			 }
+			 
+			 else if ( cell1.equalsIgnoreCase("O") && cell5.equalsIgnoreCase("O") && cell9.equalsIgnoreCase("O") ) 
+			 {
+
+				 JOptionPane.showMessageDialog(null, "User2 Won!" );
+				 break;	
+			 }
+			 
+			 else if ( cell3.equalsIgnoreCase("O") && cell5.equalsIgnoreCase("O") && cell7.equalsIgnoreCase("O") )
+			 {
+				 JOptionPane.showMessageDialog(null, "You Won!" );
+				 break;		
+			 }
+			 
+			 else if ( cell1.equalsIgnoreCase("X") && cell2.equalsIgnoreCase("X") && cell3.equalsIgnoreCase("X"))
+			 {
+				 JOptionPane.showMessageDialog(null, "You Won!" );
+				 break;		
+			 }
+			 
+			 else if ( cell4.equalsIgnoreCase("X") && cell5.equalsIgnoreCase("X") && cell6.equalsIgnoreCase("X"))
+			 {
+				 JOptionPane.showMessageDialog(null, "You Won!" );
+				 break;		
+			 }
+			 
+			 else if ( cell7.equalsIgnoreCase("X") && cell8.equalsIgnoreCase("X") && cell9.equalsIgnoreCase("X"))
+			 {
+				 JOptionPane.showMessageDialog(null, "You Won!" );
+				 break;		
+			 }
+			 
+			 else if ( cell1.equalsIgnoreCase("X") &&  cell4.equalsIgnoreCase("X") && cell7.equalsIgnoreCase("X"))
+			 {
+				 JOptionPane.showMessageDialog(null, "You Won!" );
+				 break;		
+			 }
+			 
+			 else if ( cell2.equalsIgnoreCase("X") && cell5.equalsIgnoreCase("X")  && cell8.equalsIgnoreCase("X") )
+			 {
+				 JOptionPane.showMessageDialog(null, "You Won!" );
+				 break;		
+			 }
+			 
+			 else if ( cell3.equalsIgnoreCase("X") &&  cell6.equalsIgnoreCase("X") && cell9.equalsIgnoreCase("X") )
+			 {
+				 JOptionPane.showMessageDialog(null, "You Won!" );
+				 break;		
+			 }
+			 
+			 else if ( cell1.equalsIgnoreCase("X") && cell5.equalsIgnoreCase("X") && cell9.equalsIgnoreCase("X") )
+			 {
+				 JOptionPane.showMessageDialog(null, "You Won!" );
+				 break;		
+			 }
+			 else if ( cell3.equalsIgnoreCase("X") && cell5.equalsIgnoreCase("X") && cell7.equalsIgnoreCase("X") )
+			 {
+			     JOptionPane.showMessageDialog(null, "You Won!" );
+				 break;		
+			 }
+			 
+		}while(GameDone);
+	
+	}
+	
+}
+	
+
