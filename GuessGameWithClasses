@@ -1,0 +1,99 @@
+
+GuessGameWithClasses.java
+
+import javax.swing.JOptionPane;
+public class GuessGameWithClasses
+{
+  public static void main (String args[])
+	{
+		Guess guess = new Guess();
+		
+		int userNumber;
+
+		int computerNum;
+
+		int total;
+		
+		String userAnswer;
+		
+		do
+		{
+			computerNum = guess.GenerateRandomNumberFrom0To10();
+
+			userNumber = Integer.parseInt(JOptionPane.showInputDialog("Please guess the number from 0 - 10: "));
+ 
+			total = computerNum - userNumber;
+			
+			guess.CheckGuess(userNumber,computerNum, total);
+			
+			userAnswer = JOptionPane.showInputDialog("Do you want to play again? ");
+			
+		}while(userAnswer.equalsIgnoreCase("Y"));
+	}
+
+}
+
+Guess.java
+
+import javax.swing.JOptionPane;
+
+public class Guess
+{
+
+  String incorrectAnswerMessage = null;
+
+	String correctAnswerMessage = null;
+	
+	public void CheckGuess(int userNumber, int computerNum, int total)
+	{
+		if ( userNumber > computerNum )
+		{
+
+			incorrectAnswerMessage = String.format("Your number is too large. You were %d away from the correct answer.\n", total );
+
+
+			JOptionPane.showMessageDialog(null, incorrectAnswerMessage );
+
+			correctAnswerMessage = String.format("The correct answer is %d.\n", computerNum );
+
+			JOptionPane.showMessageDialog(null, correctAnswerMessage );
+		}
+
+		else if ( userNumber < computerNum )
+		{
+
+			incorrectAnswerMessage = String.format("Your number is too small. You were %d away from the correct answer.\n", total );
+
+			JOptionPane.showMessageDialog(null, incorrectAnswerMessage );
+
+			correctAnswerMessage = String.format("The correct answer is %d.\n", computerNum );
+			
+			JOptionPane.showMessageDialog(null, correctAnswerMessage );
+		}
+
+		else
+		{
+		
+			JOptionPane.showMessageDialog(null, "You guessed correctly!\n" );
+		}
+
+	}
+	
+	public int GenerateRandomNumberFrom0To10()
+	{
+		return 0 + (int) (Math.random() * 10 );
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
