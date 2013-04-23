@@ -1,0 +1,39 @@
+import javax.swing.JOptionPane;
+
+public class RandomNumberWithClasses
+{
+
+  public static void main (String[] args )
+  {
+  	RandomNumber randomNumber = new RandomNumber();
+  	RandomNumber anotherRandomNumber = new RandomNumber(1, 20);
+  	RandomNumber otherRandomNumber = new RandomNumber(1, 40);
+  	
+  	
+  	int number1;
+  	int number2;
+  	int number3;
+  	
+  	String message;
+  	String message2;
+  	String message3;
+  	
+  	number1 = randomNumber.GetARandomNumber();
+  	
+  	message = String.format("The random number from 1-10 is %d.\n", number1 );
+  	
+  	JOptionPane.showMessageDialog(null,  message );
+  	
+  	number2 = anotherRandomNumber.GetARandomNumber();
+  	
+  	message2 = String.format("The random number from 1-20 is %d.\n", number2 );
+  	
+  	JOptionPane.showMessageDialog(null, message2 );
+  	
+  	number3 = otherRandomNumber.GetARandomNumber();
+  	
+  	message3 = String.format("The random number from 1-40 is %d.\n", number3 );
+  	
+  	JOptionPane.showMessageDialog(null, message3 );
+  }
+}
