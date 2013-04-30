@@ -1,0 +1,33 @@
+import javax.swing.JOptionPane;
+public class HighLowGame
+{
+  public static void main (String[] args )
+  {
+  	String message;
+  	String userAnswer;
+  	int userNumber;
+  	int randomNumber;
+  	int maxValue;
+  	
+  	
+  	do
+  	{
+  		userNumber = Integer.parseInt(JOptionPane.showInputDialog("How many dices do you want? "));
+  		maxValue = Integer.parseInt(JOptionPane.showInputDialog("What's the maximum value for each dice? "));
+  		
+  		randomNumber = Dice.RollDice(userNumber, maxValue);
+  		
+  		
+  		message = String.format("The random number is %d.\n", randomNumber);
+  		JOptionPane.showMessageDialog(null,  message );
+  		
+  		userAnswer = JOptionPane.showInputDialog("Do you want to play again? ");
+  		
+  	}while(userAnswer.equalsIgnoreCase("Y"));
+  	
+  
+  	message = String.format("The total number of times rolled is %d.\n", Dice.RollCount());
+  	JOptionPane.showMessageDialog(null,  message );
+  	
+  }
+}
