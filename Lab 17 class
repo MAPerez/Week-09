@@ -1,0 +1,32 @@
+public class Dice
+{
+  private static int numberOfTimesDiceRolled;
+  
+  public int RollDice(int numberOfDices)
+  {
+  	++numberOfTimesDiceRolled;
+  	int number = numberOfDices *6;
+  	return 1 + (int) (Math.random() * number );
+  }
+  
+  public static int Roll_1_Dice()
+  {
+  	++numberOfTimesDiceRolled;
+  	return 1 + (int) (Math.random() * 6 );
+  }
+  
+  
+  public static int RollDice(int numberOfDices, int max)
+  {
+  	++numberOfTimesDiceRolled;
+  	int number = numberOfDices * max;
+  	return 1 + (int) (Math.random() * number );
+  }
+  
+  
+  public static int RollCount()
+  {
+  	return numberOfTimesDiceRolled;
+  }
+  
+}
