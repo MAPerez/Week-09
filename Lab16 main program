@@ -1,0 +1,26 @@
+import javax.swing.JOptionPane;
+public class HighLowGame
+{
+  public static void main (String[] args )
+  {
+  	String message;
+  	int number1;
+  	int number2;
+  	
+  	Dice game = new Dice();
+  	
+
+  	number1 = Dice.Roll_1_Dice();
+  	
+  	message = String.format("TheLa random number with one dice is %d.\n", number1 );
+  	JOptionPane.showMessageDialog(null,  message );
+  	
+  	
+  	number2 = Integer.parseInt(JOptionPane.showInputDialog("How many dices do you want? "));
+  	int randomNumber = game.RollDice(number2);
+  	
+  	message = String.format("The random number is %d.\n", randomNumber );
+  	JOptionPane.showMessageDialog(null,  message );
+  	
+  }
+}
