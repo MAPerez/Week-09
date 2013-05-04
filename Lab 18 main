@@ -1,0 +1,73 @@
+import javax.swing.JOptionPane;
+
+public class DiceGame2
+{
+  public static void main (String[] args )
+	{
+		String message;
+		String userAnswer;
+		int userNumber;
+		int randomNumber;
+		int maxValue;
+		Dice2 dice = new Dice2();
+		Dice2 dice2 = new Dice2();
+		Dice2 dice3 = new Dice2();
+		
+		
+		do
+		{
+			// 1. Using static methods
+			JOptionPane.showMessageDialog(null, "You have rolled a dice" );
+			randomNumber = Dice2.Roll_1_Dice();
+			message = String.format("The random number is %d.\n", randomNumber);
+			JOptionPane.showMessageDialog(null,  message );
+			
+			userNumber = Integer.parseInt(JOptionPane.showInputDialog("How many dices do you want? "));
+			maxValue = Integer.parseInt(JOptionPane.showInputDialog("What's the maximum value for each dice? "));
+			
+			randomNumber = Dice2.RollDice(userNumber, maxValue);
+			
+			message = String.format("The random number is %d.\n", randomNumber);
+			JOptionPane.showMessageDialog(null,  message );
+			
+			// 2. Using public RollDice method with all three dice variable instantiated
+			
+			userNumber = Integer.parseInt(JOptionPane.showInputDialog("How many dices do you want? "));
+			
+			randomNumber = dice.RollDice(userNumber);
+			
+			message = String.format("The random number is %d.\n", randomNumber);
+			JOptionPane.showMessageDialog(null,  message );
+			
+			
+			userNumber = Integer.parseInt(JOptionPane.showInputDialog("How many dices do you want? "));
+			
+			randomNumber = dice2.RollDice(userNumber);
+			
+			message = String.format("The random number is %d.\n", randomNumber);
+			JOptionPane.showMessageDialog(null,  message );
+			
+			
+			userNumber = Integer.parseInt(JOptionPane.showInputDialog("How many dices do you want? "));
+			
+			randomNumber = dice3.RollDice(userNumber);
+			
+			message = String.format("The random number is %d.\n", randomNumber);
+			JOptionPane.showMessageDialog(null,  message );
+			
+			
+			
+			userAnswer = JOptionPane.showInputDialog("Do you want to play again? ");
+			
+		}while(userAnswer.equalsIgnoreCase("Y"));
+		
+	
+		message = String.format("The total number of times rolled using static methods is %d.\n", Dice2. StaticRollCount());
+		JOptionPane.showMessageDialog(null,  message );
+		
+		message = String.format("The total number of times rolled using public methods is %d.\n", Dice2. PublicRollCount());
+		JOptionPane.showMessageDialog(null,  message );
+	}
+
+} 
+
